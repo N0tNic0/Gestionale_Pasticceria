@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a27iXoxosGSSAF2N6+50neke9iDeyWwLidk7T9qrRe+eVoKkbrIsy41xuvuNAS0XIcCd3p19gvU9d8xzAz6diQ==",
+  "dgSpecHash": "+M0pxCnCGaKtTSYn9rZ7wTPKXWulnQyeH8rnGakQLEv7ctYGIaF2BlXc5bjy2OAXtqDh2oV7pNsuOBPD4bDm8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NotaroN\\source\\repos\\Pasticceria\\Pasticceria.Data\\Pasticceria.Data.csproj",
+  "projectFilePath": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Data\\Pasticceria.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NotaroN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\NotaroN\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

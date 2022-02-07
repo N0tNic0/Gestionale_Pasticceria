@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TlJnUWF5/muVCwOAxlayltl3OHiHGeNnQr69ZDOQM8JRVFxwnqfcVe0OgupfK64onVVzty0WW/z+tXWaiVU3eQ==",
+  "dgSpecHash": "YGj/qe2F3sUX97vkBaVRdZvj+a7oKxgxEQamB+dmTkvJeYQWZNe0mjjPbPSPnFpp/xh/gCjhAJ2YmoGnLG4ogA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NotaroN\\source\\repos\\Pasticceria\\Pasticceria.Api\\Pasticceria.Api.csproj",
+  "projectFilePath": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Api\\Pasticceria.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NotaroN\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\NotaroN\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

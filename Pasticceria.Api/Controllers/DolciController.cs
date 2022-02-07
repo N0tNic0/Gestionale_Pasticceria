@@ -16,6 +16,11 @@ namespace Pasticceria.Api.Controllers
         private readonly IDolceService _dolceService;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Dolci controller
+        /// </summary>
+        /// <param name="dolceService"></param>
+        /// <param name="mapper"></param>
         public DolciController(IDolceService dolceService, IMapper mapper)
         {
             this._mapper = mapper;

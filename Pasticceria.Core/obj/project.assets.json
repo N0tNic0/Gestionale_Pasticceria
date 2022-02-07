@@ -5806,11 +5806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NotaroN\\source\\repos\\Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
+      "projectUniqueName": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
       "projectName": "Pasticceria.Core",
-      "projectPath": "C:\\Users\\NotaroN\\source\\repos\\Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
+      "projectPath": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
       "packagesPath": "C:\\Users\\NotaroN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NotaroN\\source\\repos\\Pasticceria\\Pasticceria.Core\\obj\\",
+      "outputPath": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
