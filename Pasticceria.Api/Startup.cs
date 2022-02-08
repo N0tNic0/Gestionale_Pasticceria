@@ -38,6 +38,15 @@ namespace Pasticceria.Api
 
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost: 3000");
+                    });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
