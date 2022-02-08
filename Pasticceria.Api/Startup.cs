@@ -43,7 +43,7 @@ namespace Pasticceria.Api
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000");
+                        builder.WithOrigins("*");
                     });
             });
 

@@ -16,15 +16,8 @@ namespace Pasticceria.Data.Repositories
         public async Task<IEnumerable<Dolce>> GetAllWithIngredientiAsync()
         {
             return await PasticceriaDbContext.Dolci
-                .Select(x => new Dolce 
-                {
-                    Id = x.Id,
-                    Nome = x.Nome,
-                    Prezzo = x.Prezzo,
-                    Quantita = x.Quantita,
-                    Data_Inserimento = x.Data_Inserimento,
-                    IngredientiOfDolce = PasticceriaDbContext.IngredientiOfDolci.Where(d => d.IdDolce == x.Id).ToList()
-                })
+                .Include(i => i.IngredientiOfDolce)
+                .ThenInclude(i => i.Ingrediente)
                 .ToListAsync();
         }
 

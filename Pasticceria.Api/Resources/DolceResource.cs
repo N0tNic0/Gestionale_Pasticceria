@@ -10,6 +10,11 @@ namespace Pasticceria.Api.Resources
         public int Quantita { get; set; }
         public double Prezzo { get; set; }
         public DateTime Data_Inserimento { get; set; }
-        public ICollection<IngredientiOfDolceResource> IngredientiOfDolce { get; set; }
+        public ICollection<IngredientiOfDolceCompleteResource> IngredientiOfDolce { get; set; }
+    }
+
+    public class IngredientiOfDolceCompleteResource : IngredientiOfDolceResource
+    {
+        public IngredienteResource Ingrediente { get; set; }
     }
 }

@@ -36,7 +36,7 @@ namespace Pasticceria.Services
 
         public async Task<Dolce> GetDolceById(int id)
         {
-            return await _unitOfWork.Dolci.GetByIdAsync(id);
+            return await _unitOfWork.Dolci.GetWithIngredientiByIdAsync(id);
         }
 
         public async Task UpdateDolce(Dolce dolceToUpdate, Dolce dolce)

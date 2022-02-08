@@ -11,10 +11,12 @@ namespace Pasticceria.Api.Mapping
             CreateMap<Ingrediente, IngredienteResource>();
             CreateMap<Dolce, DolceResource>();
             CreateMap<IngredientiOfDolce, IngredientiOfDolceResource>();
+            CreateMap<IngredientiOfDolce, IngredientiOfDolceCompleteResource>();
 
             CreateMap<IngredienteResource, Ingrediente>();
             CreateMap<DolceResource, Dolce>();
             CreateMap<IngredientiOfDolceResource, IngredientiOfDolce>();
+            CreateMap<IngredientiOfDolceCompleteResource, IngredientiOfDolce>();
 
             CreateMap<SaveIngredienteResource, Ingrediente>();
             CreateMap<SaveDolceResource, Dolce>();
