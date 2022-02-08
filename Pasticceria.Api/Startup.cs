@@ -38,14 +38,7 @@ namespace Pasticceria.Api
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("*");
-                    });
-            });
+            services.AddCors();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -61,6 +54,11 @@ namespace Pasticceria.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options =>
+            options.WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
