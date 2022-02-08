@@ -1,26 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj": {}
+    "C:\\Users\\nikol\\OneDrive\\Documenti\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj": {
+    "C:\\Users\\nikol\\OneDrive\\Documenti\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
+        "projectUniqueName": "C:\\Users\\nikol\\OneDrive\\Documenti\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
         "projectName": "Pasticceria.Core",
-        "projectPath": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
-        "packagesPath": "C:\\Users\\NotaroN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NotaroN\\Documents\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\obj\\",
+        "projectPath": "C:\\Users\\nikol\\OneDrive\\Documenti\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\Pasticceria.Core.csproj",
+        "packagesPath": "C:\\Users\\nikol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikol\\OneDrive\\Documenti\\GitHub\\Gestionale_Pasticceria\\Pasticceria.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\NotaroN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\nikol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -29,9 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/nuget": {},
-          "https://packages.infragistics.com/nuget/licensed": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -85,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

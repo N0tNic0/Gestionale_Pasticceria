@@ -16,11 +16,6 @@ namespace Pasticceria.Api.Controllers
         private readonly IDolceService _dolceService;
         private readonly IMapper _mapper;
 
-        /// <summary>
-        /// Dolci controller
-        /// </summary>
-        /// <param name="dolceService"></param>
-        /// <param name="mapper"></param>
         public DolciController(IDolceService dolceService, IMapper mapper)
         {
             this._mapper = mapper;
@@ -30,74 +25,121 @@ namespace Pasticceria.Api.Controllers
         [HttpGet("")]
         public async Task<ActionResult<IEnumerable<DolceResource>>> GetAllDolci()
         {
-            var dolci = await _dolceService.GetAllDolci();
-            var dolceResource = _mapper.Map<IEnumerable<Dolce>, IEnumerable<DolceResource>>(dolci);
+            try
+            {
+                var dolci = await _dolceService.GetAllDolci();
+                if (dolci is null)
+                    return NoContent();
 
-            return Ok(dolceResource);
+                var dolceResource = _mapper.Map<IEnumerable<Dolce>, IEnumerable<DolceResource>>(dolci);
+
+                return Ok(dolceResource);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<DolceResource>> GetDolceById(int id)
         {
-            var dolci = await _dolceService.GetDolceById(id);
-            var dolceResource = _mapper.Map<Dolce, DolceResource>(dolci);
+            try
+            {
+                var dolci = await _dolceService.GetDolceById(id);
+                if (dolci is null)
+                    return NoContent();
 
-            return Ok(dolceResource);
+                var dolceResource = _mapper.Map<Dolce, DolceResource>(dolci);
+
+                return Ok(dolceResource);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         [HttpPost("")]
         public async Task<ActionResult<DolceResource>> CreateDolce([FromBody] SaveDolceResource saveDolceResource)
         {
-            var validator = new SaveDolceResourceValidator();
-            var validationResult = await validator.ValidateAsync(saveDolceResource);
+            try
+            {
+                var validator = new SaveDolceResourceValidator();
+                var validationResult = await validator.ValidateAsync(saveDolceResource);
 
-            if (!validationResult.IsValid)
-                return BadRequest(validationResult.Errors); 
+                if (!validationResult.IsValid)
+                    return BadRequest(validationResult.Errors);
 
-            var dolceToCreate = _mapper.Map<SaveDolceResource, Dolce>(saveDolceResource);
+                var dolceToCreate = _mapper.Map<SaveDolceResource, Dolce>(saveDolceResource);
 
-            var newDolce = await _dolceService.CreateDolce(dolceToCreate);
+                var newDolce = await _dolceService.CreateDolce(dolceToCreate);
 
-            var dolce = await _dolceService.GetDolceById(newDolce.Id);
+                var dolce = await _dolceService.GetDolceById(newDolce.Id);
 
-            var dolceResource = _mapper.Map<Dolce, DolceResource>(dolce);
+                var dolceResource = _mapper.Map<Dolce, DolceResource>(dolce);
 
-            return Ok(dolceResource);
+                return Ok(dolceResource);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<DolceResource>> UpdateDolce(int id, [FromBody] SaveDolceResource saveDolceResource)
         {
-            var validator = new SaveDolceResourceValidator();
-            var validationResult = await validator.ValidateAsync(saveDolceResource);
+            try
+            {
+                var validator = new SaveDolceResourceValidator();
+                var validationResult = await validator.ValidateAsync(saveDolceResource);
 
-            if (!validationResult.IsValid)
-                return BadRequest(validationResult.Errors); 
+                if (!validationResult.IsValid)
+                    return BadRequest(validationResult.Errors);
 
-            var dolceToUpdated = await _dolceService.GetDolceById(id);
+                var dolceToUpdated = await _dolceService.GetDolceById(id);
 
-            if (dolceToUpdated is null)
-                return NotFound();
+                if (dolceToUpdated is null)
+                    return NotFound();
 
-            var dolce = _mapper.Map<SaveDolceResource, Dolce>(saveDolceResource);
+                var dolce = _mapper.Map<SaveDolceResource, Dolce>(saveDolceResource);
 
-            await _dolceService.UpdateDolce(dolceToUpdated, dolce);
+                await _dolceService.UpdateDolce(dolceToUpdated, dolce);
 
-            var updatedDolce = await _dolceService.GetDolceById(id);
+                var updatedDolce = await _dolceService.GetDolceById(id);
 
-            var updatedDolceResource = _mapper.Map<Dolce, DolceResource>(updatedDolce);
+                var updatedDolceResource = _mapper.Map<Dolce, DolceResource>(updatedDolce);
 
-            return Ok(updatedDolceResource);
+                return Ok(updatedDolceResource);
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDolce(int id)
         {
-            var dolce = await _dolceService.GetDolceById(id);
+            try
+            {
+                if (id == 0)
+                    return BadRequest();
 
-            await _dolceService.DeleteDolce(dolce);
+                var dolce = await _dolceService.GetDolceById(id);
 
-            return NoContent();
+                if (dolce is null)
+                    return NotFound();
+
+                await _dolceService.DeleteDolce(dolce);
+
+                return Ok();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
     }
 }
