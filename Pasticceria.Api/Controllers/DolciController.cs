@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using System.Threading.Tasks;
 using Pasticceria.Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -70,6 +71,8 @@ namespace Pasticceria.Api.Controllers
 
                 if (!validationResult.IsValid)
                     return BadRequest(validationResult.Errors);
+
+                saveDolceResource.Data_Inserimento = DateTime.Now;
 
                 var dolceToCreate = _mapper.Map<SaveDolceResource, Dolce>(saveDolceResource);
 

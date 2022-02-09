@@ -29,11 +29,6 @@ namespace Pasticceria.Data.Configurations
                 .IsRequired();
 
             builder
-                .Property(d => d.Prezzo)
-                .IsRequired()
-                .HasMaxLength(255);
-
-            builder
                 .Property(d => d.Data_Inserimento)
                 .IsRequired();
 

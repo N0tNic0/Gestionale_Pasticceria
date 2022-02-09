@@ -15,7 +15,7 @@ namespace Pasticceria.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Quantita = table.Column<int>(type: "int", nullable: false),
-                    Prezzo = table.Column<double>(type: "float", maxLength: 255, nullable: false),
+                    Prezzo = table.Column<double>(type: "float", nullable: false),
                     Data_Inserimento = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

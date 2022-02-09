@@ -10,7 +10,7 @@ using Pasticceria.Data;
 namespace Pasticceria.Data.Migrations
 {
     [DbContext(typeof(PasticceriaDbContext))]
-    [Migration("20220206235713_InitialModel")]
+    [Migration("20220209172124_InitialModel")]
     partial class InitialModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,6 @@ namespace Pasticceria.Data.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<double>("Prezzo")
-                        .HasMaxLength(255)
                         .HasColumnType("float");
 
                     b.Property<int>("Quantita")
@@ -103,13 +102,13 @@ namespace Pasticceria.Data.Migrations
             modelBuilder.Entity("Pasticceria.Core.Models.IngredientiOfDolce", b =>
                 {
                     b.HasOne("Pasticceria.Core.Models.Dolce", "Dolce")
-                        .WithMany("Ingredienti")
+                        .WithMany("IngredientiOfDolce")
                         .HasForeignKey("IdDolce")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Pasticceria.Core.Models.Ingrediente", "Ingrediente")
-                        .WithMany("Ingredienti")
+                        .WithMany("IngredientiOfDolce")
                         .HasForeignKey("IdIngrediente")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -121,12 +120,12 @@ namespace Pasticceria.Data.Migrations
 
             modelBuilder.Entity("Pasticceria.Core.Models.Dolce", b =>
                 {
-                    b.Navigation("Ingredienti");
+                    b.Navigation("IngredientiOfDolce");
                 });
 
             modelBuilder.Entity("Pasticceria.Core.Models.Ingrediente", b =>
                 {
-                    b.Navigation("Ingredienti");
+                    b.Navigation("IngredientiOfDolce");
                 });
 #pragma warning restore 612, 618
         }
